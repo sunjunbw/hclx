@@ -1,0 +1,18 @@
+* { margin: 0; padding: 0; }
+
+table { border-collapse: collapse; margin: 50px; }
+
+.demo { margin-left: 50px; margin-top: 20px; }
+
+table img { width: 100px; height: 100px; }
+
+table tr th, table tr td { width: 150px; }
+table tr th { height: 50px; }
+table tr td { font-size: 16px; text-align: center; }
+table tr td:nth-of-type(4) span { display: inline-block; margin: 10px; width: 20px; height: 20px; border: 1px solid #999; text-align: center; line-height: 20px; font-size: 16px; cursor: pointer; }
+table tr td:nth-of-type(4) p { display: inline-block; width: 50px; height: 25px; line-height: 25px; border: 1px solid #999; background: #ccc; }
+table tr td:nth-of-type(6) button { display: inline-block; width: 50px; height: 25px; border: 1px solid #999; text-align: center; line-height: 25px; }
+
+
+
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			img{
+				width:150px;
+			}
+			.box{
+				width:500px;
+				height: 500px;
+				border: 1px solid #000;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			
+		</div>
+		<script>
+			var box=document.querySelector(".box");
+			window.ondragover=function(e){
+				e.preventDefault();
+			}
+			window.ondrop=function(e){
+				box.innerHTML+="<p>"+e.dataTransfer.files[0].name+"&nbsp;"+e.dataTransfer.files[0].size;
+				return false; //阻止默认行为
+			}
+		</script>
+	</body>
+</html>
