@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			img{
+				width:100px;
+			}
+			.dest{
+				width:500px;
+				height:200px;
+				border: 1px solid #000;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div class="source">
+			<img src="img/1.jpg" alt="" id="one"  />
+			<img src="img/2.jpg" alt="" id="two" />
+			<img src="img/3.jpg" alt="" id="three" />
+			
+		</div>
+		
+		<div class="dest">
+			
+		</div>
+		<script>
+			var source = document.querySelector(".source");
+			var dest = document.querySelector(".dest");
+			var dragimg=null;
+			source.ondragstart=function(e){
+				 var timg=new Image;
+				 timg.src="img/note.gif";
+				 e.dataTransfer.effectAllowed="move";//改变拖放时的鼠标状态
+				 e.dataTransfer.setDragImage(timg,0,-10);
+				  dragimg=document.getElementById(e.target.id);
+				  if(typeof dragimg.count=="undefined"){ //dragimg.count未赋值
+				  	   dragimg.count=1;
+				  }
+				  else{
+				  	   dragimg.count++;
+				  }
+				 dragimg.flag=true;
+			}
+			dest.ondragover=function(e){
+				e.preventDefault();
+			}
+			
+			dest.ondrop=function(e){
+				
+				
+				if(dragimg.count==1 && dragimg.flag){ //第一次拖动图像
+					var imgCopy = dragimg.cloneNode(true);
+			   
+			        dragimg.flag=false;
+					var tSpan = document.createElement("span");
+					tSpan.innerHTML = 1;
+					dragimg.info=tSpan; //把新创建span绑定到正在拖动的图像上(自定义属性)
+					this.appendChild(tSpan);
+					
+					this.appendChild(imgCopy);
+					
+				}
+				else{
+					dragimg.info.innerHTML=dragimg.count;
+				}
+				
+				
+				
+				
+				
+			}
+		</script>
+	</body>
+</html>

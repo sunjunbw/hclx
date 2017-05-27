@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="file" id="myfile" multiple />
+		<button id="btn">上传</button>
+		<script>
+			 var btn = document.querySelector("#btn");
+			 var objFile = document.querySelector("#myfile");
+			 btn.onclick=function(){
+			 	
+			 for(var i=0;i<objFile.files.length;i++){
+                      var mine=objFile.files[i].type; //name 文件名字  size 大小(字节)
+			 	    if(/image/.test(mine)){
+			 		var fs=new FileReader;
+			 		fs.readAsDataURL(objFile.files[i]);
+			 		fs.onload=function(){
+			 			var img = document.createElement("img");
+			 			img.src=this.result;
+			 			document.body.appendChild(img);
+			 		}
+			 	}
+			 	
+			 }
+			 
+			 	
+			 	
+			 	
+			 }
+		</script>
+	</body>
+</html>

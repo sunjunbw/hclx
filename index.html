@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		 <figure>
+		      <img src="img/1.jpg" alt="" />
+		      <figcaption>picture1</figcaption>
+		 </figure>
+		 
+		 <details>
+		 	 <summary>dom</summary>
+		 	 <p>
+		 	 	 new Element
+		 	 	 <br  />
+		 	 	 delete element<br  />
+		 	 	 inertBefore
+		 	 	 <br  />
+		 	 	 append element
+		 	 </p>
+		 </details>
+		 <progress min=0 max=100 value=50 id="pro"></progress>
+		  <meter min=0 max=120  value=110 low=10 high=100 optimum="90"></meter>	
+		  
+		  <ol start="8">
+		  	 <li>111</li>
+		  	 <li>222</li>
+		  	 <li>333</li>
+		  	 <li>444</li>
+		  	 <li>555</li>
+		  	 <li>777</li>
+		  </ol>
+		  <dl>
+		  	<dt>编程语言</dt>
+		  	<dd>c语言</dd>
+		  	<dd>js语言</dd>
+		  	<dd>css语言</dd>
+		  	<dt>矢量图像</dt>
+		  	<dd>AI</dd>
+		  	<dd>corelDraw</dd>
+		  
+		  </dl>
+		  <p>我最喜欢的语言是<cite>javascript</cite><small>(js)</small></p>
+		 <script>
+		 	 var objPro = document.querySelector("#pro");
+		 	 var v=0;
+		 	 var t=setInterval(function(){
+		 	 	v++;
+		 	 	objPro.value=v;
+		 	 	
+		 	 	t==100 && clearInterval(t);
+		 	 	
+		 	 },100);
+		 		
+		 </script>
+	</body>
+</html>
