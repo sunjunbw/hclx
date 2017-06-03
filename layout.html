@@ -5,6 +5,7 @@
 		<title></title>
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
 		<link rel="stylesheet" href="bs/css/bootstrap.css" />
+		<script src="js/iscroll5.js"></script>
 		<style>
 			*{
 				margin:0;padding:0;
@@ -47,11 +48,23 @@
 			 section{
 			 	flex:1;
 			 	background: red;
-			 	overflow-y: auto;
+			 	display:-webkit-flex;
+			 	flex-direction: column;
+			 	
 			 }
-			 section ul{
-			 	height: 100%;
-			 	width: 100%;
+			 section #scroller{
+			 	 overflow: hidden;
+			 }
+			  section .one{
+			   width:100%;
+			   height:100%;
+			   display:-webkit-flex;
+			 
+			 }
+			 section ul:nth-of-type(2){
+			   width:100%;
+			   height:100%;
+			 
 			 }
 			 
 			 footer{
@@ -81,11 +94,20 @@
 			  	 <p><span class="glyphicon glyphicon-lock"></span>TEST</p>
 			  	 <span class="glyphicon glyphicon-repeat"></span>
 			  </header>
-			  <section>
-			  		<ul>
-			  			<li>abc1</li>
-			  			<li>abc2</li>
-			  			<li>abc3</li>
+			  <section id="list">
+			  
+			  	   	<ul class="one">
+			        	<li>aaa</li>
+			        	<li>bbb</li>
+			        	<li>ccc</li>
+			        </ul>
+			  	  
+			        
+			        <div id="scroller">
+			        	 <ul>
+			  			<li>abc1111</li>
+			  			<li>abc2222</li>
+			  			<li>abc3333</li>
 			  			<li>abc4</li>
 			  			<li>abc5</li>
 			  			<li>abc6</li>
@@ -184,6 +206,10 @@
 			  			<li>abc99</li>
 			  			<li>abc100</li>
 			  		</ul>
+			        </div>
+			  		
+			  
+			  		
 			  </section>
 			  <footer>
 			  	   <ul><li><span class="glyphicon glyphicon-adjust"></span><b>abc</b></li>
@@ -193,5 +219,9 @@
 			  	   </ul>
 			  </footer>
 		</div>
+	<script>
+		  var a = new IScroll('#scroller');
+		 
+	</script>
 	</body>
 </html>
