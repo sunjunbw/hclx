@@ -48,13 +48,10 @@
 			 section{
 			 	flex:1;
 			 	background: red;
-			 	display:-webkit-flex;
-			 	flex-direction: column;
-			 	
+			 
+			 	overflow: auto;
 			 }
-			 section #scroller{
-			 	 overflow-y:auto;
-			 }
+			
 			
 			 section ul{
 			   width:100%;
@@ -92,7 +89,7 @@
 			  </header>
 			  <section id="list">
 			   
-			        <div id="scroller">
+			       
 			        	 <ul>
 			  			<li>abc1111</li>
 			  			<li>abc2222</li>
@@ -195,7 +192,7 @@
 			  			<li>abc99</li>
 			  			<li>abc100</li>
 			  		</ul>
-			        </div>
+			       
 			  		
 			  
 			  		
@@ -209,7 +206,7 @@
 			  </footer>
 		</div>
 	<script>
-		  var a = new IScroll('#scroller');
+		  var a = new IScroll('#list');
 		 
 	</script>
 	</body>
